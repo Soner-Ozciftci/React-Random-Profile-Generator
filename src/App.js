@@ -1,5 +1,5 @@
 import { useState , useEffect} from 'react';
-import './App.css'
+import './App.css';
 import axios from 'axios';
 
 function App() {
@@ -14,15 +14,22 @@ const profileData = async()=>{
 try {
   const res = await axios.get("https://randomuser.me/api");
   console.log(res);
+  setProfileCell(res.data.results[0].cell);
+  setProfileEmail(res.data.results[0].email);
+setProfileImage(res.data.results[0].picture.large);
+setProfileName(`${res.data.results[0].name.first} ${res.data.results[0].name.last}`);
 } catch (error) {
  console.log("error");
   }
 }
   return (
     <div className="App">
+      <div className='profileContainer'>
+      <button onClick={profileData}>Click for new profile</button>
+      </div>
 
     </div>
   );
 }
 
-export default App;
+export default App; 
