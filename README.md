@@ -1,0 +1,1 @@
+Uygulama da useEffect ve useState kullandım.Aynı zamanda veriyi 'axios' ile çektim
